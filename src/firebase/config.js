@@ -3,12 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyD6xUVWZ-i9TYTyWcUi9ayfAO-2QkJrhGg',
-  authDomain: 'vue-todo-app-6a1e3.firebaseapp.com',
-  projectId: 'vue-todo-app-6a1e3',
-  storageBucket: 'vue-todo-app-6a1e3.appspot.com',
-  messagingSenderId: '1035804004939',
-  appId: '1:1035804004939:web:fd555e41b7f5175dfa73ce',
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID,
 };
 
 // init firebase

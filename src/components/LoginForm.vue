@@ -34,7 +34,7 @@
         <div class="mt-6 text-center">
           <button
             type="submit"
-            class="justify-center w-32 p-3 text-white bg-green-600 rounded-lg shadow outline-none focus:bg-green-700 hover:bg-green-500"
+            class="justify-center w-32 p-3 text-white bg-green-600 rounded-lg shadow outline-none focus:bg-green-700 hover:bg-green-500 focus:outline-none"
             @click="handleLogin"
           >
             Login
