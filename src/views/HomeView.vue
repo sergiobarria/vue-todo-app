@@ -1,12 +1,13 @@
 <template>
   <TheHeader />
   <div class="container max-w-4xl mx-auto mt-10">
-    <div class="mt-10">
-      <h2
+    <LoadingSpinner v-if="!tasks" />
+    <div class="mt-10" v-else>
+      <h1
         class="my-8 text-2xl text-center text-gray-300 md:text-4xl lg:text-5xl"
       >
         This are your tasks for the day
-      </h2>
+      </h1>
       <div>
         <form
           class="flex justify-center mx-4 my-8"
@@ -58,9 +59,13 @@
               ></i>
             </td>
             <td>
-              <!-- <router-link :to="{ name: 'EditTask', params: { id: doc.id } }"> -->
-              <i class="px-4 py-2 cursor-pointer far fa-edit"></i>
-              <!-- </router-link> -->
+              <router-link
+                :to="{ name: 'EditTaskView', query: { taskID: task.id } }"
+              >
+                <i
+                  class="px-4 py-2 text-blue-500 cursor-pointer far fa-edit"
+                ></i>
+              </router-link>
             </td>
             <td>
               <i
@@ -88,6 +93,7 @@
 
 <script>
 import TheHeader from '@/components/TheHeader.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 
 import getUser from '@/hooks/getUser';
 import getCollection from '@/hooks/getCollection';
@@ -98,7 +104,7 @@ import { useRouter } from 'vue-router';
 
 export default {
   name: 'HomeView',
-  components: { TheHeader },
+  components: { TheHeader, LoadingSpinner },
   setup() {
     const { user } = getUser();
     const router = useRouter();

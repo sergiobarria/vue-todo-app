@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import WelcomeView from '../views/WelcomeView.vue';
 import HomeView from '../views/HomeView.vue';
+import EditTaskView from '../views/EditTaskView.vue';
 
 import { projectAuth } from '../firebase/config';
 
@@ -25,6 +26,12 @@ const routes = [
     path: '/todo-list',
     name: 'HomeView',
     component: HomeView,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/edit-task',
+    name: 'EditTaskView',
+    component: EditTaskView,
     beforeEnter: requireAuth,
   },
 ];
