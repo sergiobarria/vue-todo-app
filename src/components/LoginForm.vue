@@ -18,7 +18,6 @@
             style="transition: all 0.15s ease 0s"
             v-model="email"
           />
-          <!-- <small class="p-2 text-red-500">* Email</small> -->
         </div>
         <div class="relative w-11/12 mx-auto mb-4 sm:w-full">
           <input
@@ -29,7 +28,6 @@
             style="transition: all 0.15s ease 0s"
             v-model="password"
           />
-          <!-- <small class="p-2 text-red-500">* Password</small> -->
         </div>
         <div class="mt-6 text-center">
           <button
@@ -40,6 +38,12 @@
             Login
           </button>
         </div>
+        <p
+          v-if="error"
+          class="px-2 mt-4 text-sm tracking-wide text-center text-red-500"
+        >
+          {{ error }}
+        </p>
       </form>
     </div>
   </div>

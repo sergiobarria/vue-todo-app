@@ -10,7 +10,7 @@ const signup = async (email, password, username) => {
     const res = await projectAuth.createUserWithEmailAndPassword(email, password);
 
     if (!res) {
-      throw new Error('Could not complete the signup. Please try again later');
+      throw new Error('Something went wrong, could not complete the signup. Please try again.');
     }
 
     await res.user.updateProfile({ displayName: username });
