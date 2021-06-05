@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import WelcomeView from '../views/WelcomeView.vue';
 import HomeView from '../views/HomeView.vue';
 import EditTaskView from '../views/EditTaskView.vue';
+import NotFoundView from '../views/NotFoundView.vue';
 
 import { projectAuth } from '../firebase/config';
 
@@ -33,6 +34,11 @@ const routes = [
     name: 'EditTaskView',
     component: EditTaskView,
     beforeEnter: requireAuth,
+  },
+  {
+    path: '/:catchAll(.*)*',
+    name: 'NotFoundView',
+    component: NotFoundView,
   },
 ];
 
