@@ -127,12 +127,7 @@ export default {
     // handle task delete
     const handleDelete = (id) => {
       try {
-        dbRef
-          .doc(id)
-          .delete()
-          .then(() => {
-            console.log('task deleted!');
-          });
+        dbRef.doc(id).delete();
       } catch (err) {
         console.log(err.message);
       }
